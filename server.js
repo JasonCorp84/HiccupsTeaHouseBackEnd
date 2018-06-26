@@ -1,5 +1,6 @@
 const express = require('express');
-const helmet = require('helmet');
+// const helmet = require('helmet');
+require('dotenv').config();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
@@ -29,7 +30,7 @@ server.listen(port, () => {
 })
 
 mongoose
-    .connect('mongodb://csaba:Csaba123@ds018538.mlab.com:18538/hiccupsteahouse')
+    .connect(process.env.mongo)
     .then(() => {
         console.log('\n CONNECTED TO THE DATABASE')
     })
