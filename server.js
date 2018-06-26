@@ -1,4 +1,5 @@
 const express = require('express');
+const helmet = require('helmet');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
@@ -11,8 +12,28 @@ const corsOptions = {
     credentials: true // sets the Access-Control-Allow-Credentials CORS header
 }
 
+
+server.use(express.json());
+server.use(cors(corsOptions));
+
+
+
 const port = process.env.PORT || 5000;
+
+server.get('/', (req,res) => {
+    res.status(200).json('api connected')
+})
 
 server.listen(port, () => {
     console.log(`server listen on port ${port}`)
 })
+
+mongoose
+    .connect('mongodb://csaba:Csaba123@ds018538.mlab.com:18538/hiccupsteahouse')
+    .then(() => {
+        console.log('\n CONNECTED TO THE DATABASE')
+    })
+    .catch(err => console.log(
+        
+        "ERROR CONNECTING TO THE DATABASE", err
+    ))
