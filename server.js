@@ -3,7 +3,7 @@ const express = require('express');
 require('dotenv').config();
 const mongoose = require('mongoose');
 const cors = require('cors');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 
 const server = express();
 const secret = "repul a repul a balna";
