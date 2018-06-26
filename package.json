@@ -1,10 +1,10 @@
 {
-  "name": "jwts",
+  "name": "hiccupsteahouse",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "yarn start"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +15,8 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.1.5"
-  },
-  "devDependencies": {
+    "mongoose": "^5.1.5",
     "nodemon": "^1.17.5"
   }
+  
 }
