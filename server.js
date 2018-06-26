@@ -25,14 +25,16 @@ server.get('/', (req,res) => {
     res.send('api connected');
 })
 
-server.listen(port, () => {
-    console.log(`server listen on port ${port}`)
-})
 
 mongoose
-    .connect(process.env.mongo)
-    .then(() => {
-        console.log('\n CONNECTED TO THE DATABASE')
+.connect(process.env.mongo)
+.then(() => {
+    console.log('\n CONNECTED TO THE DATABASE')
+})
+.then(() => {
+    server.listen(port, () => {
+        console.log(`server listen on port ${port}`)
+    })
     })
     .catch(err => console.log(
         
