@@ -22,7 +22,7 @@ server.use(cors(corsOptions));
 const port = process.env.PORT || 5000;
 
 server.get('/', (req,res) => {
-    res.status(200).json('api connected')
+    res.send('api connected');
 })
 
 server.listen(port, () => {
